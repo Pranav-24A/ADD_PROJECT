@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Clone</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+            color: white;
+        }
+        header {
+            background: #000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid #f0a500;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        nav {
+            background: #111;
+            display: flex;
+            justify-content: center;
+            border-bottom: 3px solid #f0a500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 15px 0;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #f0a500;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #fff;
+        }
+        main {
+            display: flex;
+            margin: 20px;
+        }
+        aside {
+            width: 20%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            margin-right: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+        aside h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #f0a500;
+        }
+        aside ul {
+            list-style: none;
+        }
+        aside ul li {
+            margin: 10px 0;
+        }
+        aside ul li a {
+            color: #f0a500;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        aside ul li a:hover {
+            color: #fff;
+        }
+        section {
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid #f0a500;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+        .product h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #f0a500;
+        }
+        .product p {
+            font-size: 1.2rem;
+        }
+        .quantity-input {
+            width: 50px;
+            padding: 5px;
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-top: 4px solid #f0a500;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #f0a500;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background: #fff;
+            color: #f0a500;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nike Clone</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="p.html">Home</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Running</a></li>
+            <li><a href="#">Basketball</a></li>
+            <li><a href="#">Football</a></li>
+            <li><a href="#">Training</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Lifestyle</a></li>
+            <li><a href="cart.html">My Cart</a></li>
+        </ul>
+    </nav>
+    <main>
+        <aside>
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#">Shoes</a></li>
+                <li><a href="#">Apparel</a></li>
+                <li><a href="#">Gear</a></li>
+                <li><a href="#">Equipment</a></li>
+            </ul>
+        </aside>
+        <section>
+            <div class="product">
+                <h3>Air Max 270</h3>
+                <p>Price: $150</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Air Max 270" data-price="150">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>React Infinity Run</h3>
+                <p>Price: $160</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="React Infinity Run" data-price="160">Add to Cart</button>
+            </div>
+            <div class="product">
+                <h3>ZoomX Vaporfly</h3>
+                <p>Price: $250</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="ZoomX Vaporfly" data-price="250">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nike Clone. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-product');
+                const productPrice = parseFloat(button.getAttribute('data-price'));
+                const quantity = parseInt(button.previousElementSibling.value); // Get the quantity value
+                
+                // Check if the product is already in the cart
+                const existingProduct = cart.find(item => item.name === productName);
+                if (existingProduct) {
+                    existingProduct.quantity += quantity; // Update the quantity if product exists
+                } else {
+                    cart.push({ name: productName, price: productPrice, quantity: quantity });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+            });
+        });
+    </script>
+</body>
+</html>

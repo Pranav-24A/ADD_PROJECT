@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nike Clone - Football</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            color: black;
+        }
+        header {
+            background: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid black;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        nav {
+            background: white;
+            display: flex;
+            justify-content: center;
+            border-bottom: 3px solid black;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 15px 0;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #555;
+        }
+        main {
+            display: flex;
+            margin: 20px;
+        }
+        aside {
+            width: 20%;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-right: 20px;
+            border: 1px solid black;
+        }
+        aside h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+        aside ul {
+            list-style: none;
+        }
+        aside ul li {
+            margin: 10px 0;
+        }
+        aside ul li a {
+            color: black;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        aside ul li a:hover {
+            color: #555;
+        }
+        section {
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background: white;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .product h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: black;
+        }
+        .product p {
+            font-size: 1.2rem;
+        }
+        .price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .price .original {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+        .price .discount {
+            color: black;
+            font-weight: bold;
+        }
+        .quantity-input {
+            width: 50px;
+            padding: 5px;
+            font-size: 1rem;
+            margin-right: 10px;
+            background: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+        footer {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-top: 4px solid black;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background: #555;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nike Clone - Football</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="p.html">Home</a></li>
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="running.html">Running</a></li>
+            <li><a href="basketball.html">Basketball</a></li>
+            <li><a href="football.html">Football</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="sale.html">Sale</a></li>
+            <li><a href="newarrivals.html">New Arrivals</a></li>
+            <li><a href="accessories.html">Accessories</a></li>
+            <li><a href="Lifestyles.html">Lifestyle</a></li>
+            <li><a href="cart.html">My Cart</a></li>
+        </ul>
+    </nav>
+    <main>
+        <aside>
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="men.html">Shoes</a></li>
+                <li><a href="apparel.html">Apparel</a></li>
+                <li><a href="gear.html">Gear</a></li>
+                <li><a href="equipment.html">Equipment</a></li>
+            </ul>
+        </aside>
+        <section>
+            <div class="product">
+                <img src="Phantom GT2 Elite.png">
+                <h3>Phantom GT2 Elite</h3>
+                <p>Price: ₹20,000</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Phantom GT2 Elite" data-price="20000">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Mercurial Vapor 15.png">
+                <h3>Mercurial Vapor 15</h3>
+                <p>Price: ₹18,000</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Mercurial Vapor 15" data-price="18000">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Tiempo Legend 9.png">
+                <h3>Tiempo Legend 9</h3>
+                <p>Price: ₹17,000</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Tiempo Legend 9" data-price="17000">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Superfly 9 Academy.png">
+                <h3>Superfly 9 Academy</h3>
+                <p>Price: ₹11,000</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Superfly 9 Academy" data-price="11000">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Zoom Mercurial.png">
+                <h3>Zoom Mercurial</h3>
+                <p>Price: ₹14,500</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Zoom Mercurial" data-price="14500">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="hypervenom.png">
+                <h3>Hypervenom Phantom</h3>
+                <p>Price: ₹16,500</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Hypervenom Phantom" data-price="16500">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Premier II FG.png">
+                <h3>Premier II FG</h3>
+                <p>Price: ₹9,000</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Premier II FG" data-price="9000">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Magista Obra II.png">
+                <h3>Magista Obra II</h3>
+                <p>Price: ₹15,000</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Magista Obra II" data-price="15000">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="CTR360 Maestri III.png">
+                <h3>CTR360 Maestri III</h3>
+                <p>Price: ₹13,500</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="CTR360 Maestri III" data-price="13500">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="Nike Ordem Ball.png">
+                <h3>Nike Ordem Ball</h3>
+                <p>Price: ₹12,000</p>
+                <input type="number" class="quantity-input" value="1" min="1" max="10">
+                <button class="add-to-cart" data-product="Nike Ordem Ball" data-price="12000">Add to Cart</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nike Clone. All rights reserved.</p>
+    </footer>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const productName = button.getAttribute('data-product');
+                const productPrice = parseFloat(button.getAttribute('data-price'));
+                const quantity = parseInt(button.previousElementSibling.value); 
+                const existingProduct = cart.find(item => item.name === productName);
+                if (existingProduct) {
+                    existingProduct.quantity += quantity; 
+                } else {
+                    cart.push({ name: productName, price: productPrice, quantity: quantity });
+                }
+    
+                localStorage.setItem('cart', JSON.stringify(cart));
+    
+                const message = document.createElement('div');
+                message.textContent = `${productName} has been added to your cart.`;
+                message.style.position = 'fixed';
+                message.style.bottom = '20px';
+                message.style.right = '20px';
+                message.style.backgroundColor = 'black';
+                message.style.color = 'white';
+                message.style.padding = '10px 20px';
+                message.style.borderRadius = '8px';
+                message.style.zIndex = '1000';
+                message.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.3)';
+                document.body.appendChild(message);
+    
+                setTimeout(() => {
+                    message.remove();
+                }, 3000); 
+            });
+        });
+    </script>
+</body>
+</html>

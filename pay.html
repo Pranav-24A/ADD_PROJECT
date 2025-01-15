@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Nike Clone</title>
+    <style>
+     
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            color: black;
+        }
+        header {
+            background: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid black;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        main {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .payment-form {
+            background: white;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .payment-form h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        .payment-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .payment-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+        .payment-summary {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .button-container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background: #555;
+            transform: scale(1.1);
+        }
+        footer {
+            background: white;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            border-top: 4px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Payment - Nike Clone</h1>
+    </header>
+    <main>
+        <div class="payment-form">
+            <h2>Payment Details</h2>
+            <div class="payment-summary">
+                Total Amount: ₹<span id="total-amount">0.00</span>
+            </div>
+            <form id="paymentForm">
+                <label for="name">Name on Card:</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="123456789012" maxlength="12" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+
+                <div class="button-container">
+                    <button type="submit">Pay Now</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Nike Clone. All rights reserved.</p>
+    </footer>
+
+    <script>
+      
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalAmount = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+
+       
+        document.getElementById('total-amount').textContent = totalAmount.toFixed(2);
+
+      
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const cardNumber = document.getElementById('card-number').value;
+            const expiryDate = document.getElementById('expiry-date').value;
+            const cvv = document.getElementById('cvv').value;
+
+           
+            if (!/^\d{12}$/.test(cardNumber)) {
+                alert('Card number must be 12 digits.');
+                return;
+            }
+
+            
+            const [month, year] = expiryDate.split('/');
+            if (!month || !year || isNaN(month) || isNaN(year) || month < 1 || month > 12) {
+                alert('Invalid expiry date. Ensure the format is MM/YY and month is between 1 and 12.');
+                return;
+            }
+
+           
+            if (!/^\d{3}$/.test(cvv)) {
+                alert('CVV must be exactly 3 digits.');
+                return;
+            }
+
+          
+            alert('Payment successful! Thank you for your purchase.');
+            localStorage.removeItem('cart'); 
+            window.location.href = "p.html"; 
+        });
+    </script>
+</body>
+</html>

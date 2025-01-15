@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Nike</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 350px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        p.tagline {
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #000;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #333;
+        }
+        .link {
+            margin-top: 15px;
+        }
+        .link a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <h1>NIKE</h1>
+        <p class="tagline">"Just Do It. Start Your Journey Today."</p>
+        <h2>Register</h2>
+        <form id="register-form">
+            <input type="email" id="email" class="input-field" placeholder="Email" required>
+            <input type="password" id="password" class="input-field" placeholder="Password" required>
+            <input type="password" id="confirm-password" class="input-field" placeholder="Confirm Password" required>
+            <input type="text" id="address" class="input-field" placeholder="Address" required>
+            <input type="text" id="mobile" class="input-field" placeholder="Mobile Number" required>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+        <div class="link">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('register-form');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const address = document.getElementById('address').value;
+            const mobile = document.getElementById('mobile').value;
+
+            // Validate password match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+
+            // Save the new user data
+            alert('Registration Successful! Redirecting to login...');
+            window.location.href = 'login.html'; // Redirect to login page
+        });
+    </script>
+
+</body>
+</html>
